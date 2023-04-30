@@ -4,16 +4,17 @@ console.log("JS kører");
 
 window.addEventListener("load", initApp);
 
+let count = 0;
+
 function initApp() {
-    addButtonClicked();
-    subtractButtonClicked();
+  addButtonClicked();
+  subtractButtonClicked();
 }
 
 const number = document.querySelector("#number");
 
 function addButtonClicked() {
   document.querySelector("#add-button").addEventListener("click", addOne);
-  
 }
 
 function subtractButtonClicked() {
@@ -23,14 +24,18 @@ function subtractButtonClicked() {
 }
 
 function addOne() {
-    number.textContent = +number.textContent + 1;
-    
-console.log("add-button clicked");
-
+  count += 1;
+  number.textContent = count;
+  console.log(count);
+  if (count >= 20) {
+    number.textContent = "prøv igen";
+  }
+  console.log("add-button clicked");
 }
 
 function subtractOne() {
-    number.textContent = +number.textContent - 1;
-      console.log("subtract-button clicked");
+  count-=1;
+  number.textContent = count;
+  console.log(count);
+  console.log("subtract-button clicked");
 }
-
